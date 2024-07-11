@@ -1,0 +1,47 @@
+---
+---
+<div class="main-header">
+    <ul class="flex mb-5 m-2 pt-3 pl-3">
+        <li>
+            <a class="navbtn mr-6 px-5 p-0.5 justify-start" href="/home">
+                Home
+            </a>
+        </li>
+        <li class="ml-auto">
+            <a class="navbtn mr-6 px-5 p-0.5 justify-end" href="/projects">
+                Projects
+            </a>
+        </li>
+        <li>
+            <a class="navbtn mr-6 px-5 p-0.5 justify-end" href="https://www.linkedin.com/in/gavin-crigger-58257b25b/" target="_blank">
+                LinkedIn
+            </a>
+        </li>
+        <li>
+            <a class="navbtn mr-6 px-5 p-0.5 justify-end" href="mailto:tzn4fx@virginia.edu">
+                eMail me!   
+            </a>
+        </li>
+    </ul>
+</div>
+
+<style>
+    .main-header { /* Ensure container is flex */
+        justify-content: space-between; /* Distribute items evenly */
+        align-items: center; /* Center items vertically */
+        background: linear-gradient(rgba(var(--header-background), 100%), rgba(var(--header-background), 80%));
+        border-bottom-width: 4px;
+        padding: 10px; /* Add padding as needed */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    }
+    .navbtn {
+        color:white;
+        background: rgb(var(--complement));
+        border-radius: 7px;
+        border-width: 2px;
+        padding: 0.5rem 1rem;
+    }
+    .navbtn:hover {
+        color: rgb(var(--accent));
+    }
+</style>
