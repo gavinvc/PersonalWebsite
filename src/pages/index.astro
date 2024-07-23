@@ -1,28 +1,38 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Header from '../components/Header.astro'
+import gavinImg from '/src/Gavin.jpg';
 ---
 
 <Layout title="All About Gavin">
 	<main>
-		<div class="inline-flex flex-col bg-green-100">
+		<div class="inline-flex flex-col bg-green-100 w-screen main-background">
 			<div class="pt-10 h-86 p-3 grid grid-cols-2">
 				<div class="flex flex-col justify-center"> 
-					<h1 class="pt-5 text-slate-500 text-center">Hello, I'm Gavin!</h1>
-					<h4 class="pb-10 text-slate-400 text-center">I am a computer science student at the University of Virginia focusing on cybersecurity and data science.</h4>
+					<h1 class="pt-5 text-black text-center">Hello, I'm Gavin!</h1>
+					<h4 class="pb-10 text-slate-800 text-center">I am a computer science student at the University of Virginia<br> with a focus on cybersecurity and data science.</h4>
 				</div>
-				<div>
-					<img src="/src/Gavin.jpg" alt="Gavin's Image" class="rounded-full mx-auto h-64 border-4 border-black">
+				<div class="pb-10">
+					<Image src={gavinImg} alt="Gavin's Image" class="rounded-full mx-auto align-middle border-4 border-black gavin-image" />
 				</div>
 			</div>
-			<div>
-			</div>
+		</div>
+		<div class="inline-flex flex-col bg-green-900 w-screen secondary-background">
+			<h2 data-aos="fade-in" data-aos-delay="300" class="text-gray-300">⬇️ More about me ⬇️</h2>
 		</div>
 	</main>
 </Layout>
 
 <style>
+	@keyframes intro-animation {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
 	main {
 		color: white;
 		font-size: 20px;
@@ -34,6 +44,8 @@ import Header from '../components/Header.astro'
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
+		animation-name: intro-animation;
+		animation-duration: 1.5s;
 	}
 	h2 {
 		font-size: 3rem;
@@ -41,14 +53,21 @@ import Header from '../components/Header.astro'
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
-		border-color: black;
-		border-width: 5px;
+		margin-top: 1em;
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+	h4 {
+		animation-name: intro-animation;
+		animation-duration: 1.75s;
+	}
+	.main-background {
+		border-bottom: 4px;
+	}
+	.secondary-background {
+
+	}
+	.gavin-image {
+		max-width: 75%;
+		animation-name: intro-animation;
+		animation-duration: 2.0s;
 	}
 </style>
