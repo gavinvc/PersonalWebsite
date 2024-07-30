@@ -2,6 +2,9 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import gavinImg from '/src/Gavin.jpg';
+import taImg from '/src/TA.jpg';
+import placeholder from '/src/placeholder.jpg'
+import sustainability from '/src/sustainability.jpg';
 ---
 
 <Layout title="All About Gavin">
@@ -10,16 +13,44 @@ import gavinImg from '/src/Gavin.jpg';
 			<div class="pt-10 h-86 p-3 grid grid-cols-2">
 				<div class="flex flex-col justify-center"> 
 					<h1 class="pt-5 text-black text-center">Hello, I'm Gavin!</h1>
-					<h4 class="pb-10 text-slate-800 text-center">I am a computer science student at the University of Virginia<br> with a focus on cybersecurity and data science.</h4>
+					<h4 class="pb-10 text-slate-800 text-center">I am a computer science student at the University of Virginia<br> with a focus on cybersecurity and data science. I also have a passion for sustainability.</h4>
 				</div>
 				<div class="pb-10">
-					<Image src={gavinImg} alt="Gavin's Image" class="rounded-full mx-auto align-middle border-4 border-black gavin-image" />
+					<Image loading="eager" src={gavinImg} alt="Gavin Crigger smiling while giving a thumbs up in a garden" class="rounded-full mx-auto align-middle border-4 border-black gavin-image" />
 				</div>
 			</div>
 		</div>
 		<div class="inline-flex flex-col bg-green-900 w-screen secondary-background">
-			<h2 data-aos="fade-in" data-aos-delay="300" class="text-gray-300">⬇️ More about me ⬇️</h2>
+			<h2 class="text-gray-300">⬇️ More about me ⬇️</h2>
 		</div>
+		<div class="h-86 p-5 grid grid-cols-2">
+			<div class="p-10 flex flex-col justify-center bg-green-100 border-black border-4 rounded-2xl"> 
+				<h3 class="pt-2 pb-2 text-slate-900 border-black border-2 rounded-xl bg-gray-100">I am currently working as the Head Grading TA for CS 2130 at UVA.</h3>	
+				<body> <font color="#000000">This course teaches students an introduction to computer systems and organization.
+					My duties have included: leading a lab of 60 students by lecturing briefly on a topic and 
+					overseeing in-lab activities, rewriting homeworks and autograders to match new requirements,
+					and helping draft exams for the 500 person course. Check out more about <a style="font-family:Roboto" href="https://researcher111.github.io/uva-cso1-F23-DG/">CS 2130 here!</a></font>
+				</body>
+			</div>
+			<div class="flex flex-col justify-center">
+				<Image loading="lazy" src={placeholder} alt="placeholder" class="rounded-full mx-auto align-middle border-4 border-black ta-image" />
+			</div>
+		</div>
+		<div class="bg-gray-700 mt-10 mb-10 ml-5 mr-5 p-1"/>
+		<div class="h-86 p-5 grid grid-cols-2">
+			<div class="flex flex-col justify-center">
+				<Image loading="lazy" src={sustainability} alt="placeholder" class="rounded-full mx-auto align-middle border-4 border-black ta-image" />
+			</div>
+			<div class="p-10 flex flex-col justify-center bg-green-100 border-black border-4 rounded-2xl"> 
+				<h3 class="pt-2 pb-2 text-slate-900 border-black border-2 rounded-xl bg-gray-100">I also work as a Service Learning team member for the UVA Office for Sustainability</h3>	
+				<body> <font color="#000000">Through the office, I plan and execute large-scale volunteer opportunities
+						like composting at home football/basketball games as well as community cleanups. Additionally,
+						I have worked extensively on the office's website to upload blogs and ensure accessibility.
+						Read more about my work in the <a style="font-family:Roboto" href="/projects">projects</a> tab!	</body>
+			</div>
+		</div>
+		<div class="bg-gray-700 mt-10 mb-10 ml-5 mr-5 p-1"/>
+
 	</main>
 </Layout>
 
@@ -55,19 +86,33 @@ import gavinImg from '/src/Gavin.jpg';
 		margin-bottom: 1em;
 		margin-top: 1em;
 	}
+	h3 {
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+		margin-top: 1em;
+	}
 	h4 {
 		animation-name: intro-animation;
 		animation-duration: 1.75s;
 	}
+	body {
+		color: rgb(var(--complement));
+	}
 	.main-background {
 		border-bottom: 4px;
 	}
-	.secondary-background {
+	/* .secondary-background {
 
-	}
+	} */
 	.gavin-image {
 		max-width: 75%;
 		animation-name: intro-animation;
 		animation-duration: 2.0s;
+	}
+	.ta-image {
+		max-width: 66%;
 	}
 </style>
