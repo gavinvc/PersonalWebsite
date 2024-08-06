@@ -1,12 +1,29 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Project from '../components/Project.astro';
 ---
 
 <Layout title="Gavin's Projects">
 	<main>
-		<div class="bg-green-100 w-screen main-background">
+		<div class="bg-green-50 w-screen main-background border-b-4 border-black">
 			<h1 class = "pt-5 text-black text-center">Let's talk projects.</h1>
-			<h4 class = "pb-10 text-slate-800 text-center">I've spent time working in the fields of computer science and sustainability, looking for opportunities tying the two together.</h4>
+			<h4 class = "pb-10 text-slate-800 text-center">I've worked in computer science and sustainability, looking for opportunities tying the two together.</h4>
+		</div>
+		<div class="p-5 grid grid-cols-2">
+			<div class="w-full">
+				<h2 class="cs-title drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Computer Science</h2>
+				<div class="flex justify-start">
+					<Project title="Potted Pal" description = "Garden management application (wip)" imagePath="/src/assets/sustainability.jpg" link="https://sustainability.virginia.edu/blog/uva-green-games-receive-green-travel-award" altText="fill in" type="card2"/>
+				</div>
+			</div>
+			<div class="w-full">
+				<div class="flex justify-end">
+					<h2 class="sustainability-title drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">Sustainability</h2>
+				</div>
+				<div class="flex justify-end">
+					<Project title="Green Games Blog" description = "Blog post about the success of UVA's Green Games, which I played a role in organizing and executing." imagePath="/src/assets/sustainability.jpg" link="https://sustainability.virginia.edu/blog/uva-green-games-receive-green-travel-award" altText="fill in" type="card1"/>
+				</div>
+			</div>
 		</div>
 	</main>
 </Layout>
@@ -26,14 +43,15 @@ import Layout from '../layouts/Layout.astro';
 	}
 	h2 {
 		font-size: 3rem;
+		color: black;
 		font-weight: 700;
 		line-height: 1;
-		text-align: center;
 		margin-bottom: 1em;
-		border-color: black;
-		border-width: 5px;
 	}
-	.main-background {
-		border-bottom: 4px;
+	.cs-title {
+		color: rgb(var(--complement2));
+	}
+	.sustainability-title {
+		color: rgb(var(--complement));
 	}
 </style>
