@@ -1,7 +1,7 @@
 ---
 import type { ImageMetadata } from 'astro';
 import { Image } from 'astro:assets';
-const { title, description, imagePath, link, altText, type } = Astro.props;
+const { title, description, imagePath, link, altText, type, linktype } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}')
 if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
@@ -12,7 +12,7 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
         <body><font color=#000000>{description}</font></body>
         <Image class="rounded-full border-2 border-black mx-auto align-middle" src={images[imagePath]()} alt={altText}/>
     </div>
-    <a class="linkbutton" href={link}>Learn more</a>
+    <a class:list={[linktype]} href={link}>Learn more</a>
 </div>
 
 <style>
@@ -44,12 +44,18 @@ if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: 
 		line-height: 1;
 		margin-bottom: 1em;
     }
-    .linkbutton   {
+    .green-link   {
         color: rgb(var(--accent));
     }
-	.linkbutton:hover {
+	.green-link:hover {
         color: green;
     }
+	.blue-link {
+		color: rgb(var(--complement2-dark));
+	}
+	.blue-link:hover {
+		color: blue;
+	}
 	.card1 {
 		background: linear-gradient(rgba(var(--accent), 80%), rgba(var(--accent), 30%));
 	}
